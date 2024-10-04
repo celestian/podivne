@@ -10,7 +10,7 @@ from ppp.core.design_patterns import Singleton
 class Logger(metaclass=Singleton):
 
     def __init__(self):
-        self._logger = logging.getLogger('app')
+        self._logger = logging.getLogger()
         self._logger.setLevel(logging.DEBUG)
 
         formatter = logging.Formatter("%(levelname)s: %(message)s {%(module)s:%(lineno)d}")
@@ -38,8 +38,7 @@ class Logger(metaclass=Singleton):
 
     def _shutdown_logger(self):
         
-        logger = logging.getLogger('app')
-        for handler in logger.handlers:
+        for handler in self._logger.handlers:
              print(f"Flushing handler [{handler}]")
              handler.flush()
              handler.close()
