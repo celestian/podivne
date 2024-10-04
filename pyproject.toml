@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppp"
+description = "Podivna vec"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "docopt",
+    'importlib-metadata; python_version>="3.12"',
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["black", "isort", "behave", "pexpect"]
+
+[tool.setuptools_scm]
+write_to = "ppp/_version.py"
+
+[tool.setuptools.packages.find]
+include = ["ppp*"]
+
+[project.scripts]
+ppp = "ppp.__main__:main"
