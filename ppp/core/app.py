@@ -1,7 +1,6 @@
-import logging
+from ppp.core.logger import Logger
 
-
-_logger = logging.getLogger('app')
+_logger = Logger().logger
 
 
 class App:
