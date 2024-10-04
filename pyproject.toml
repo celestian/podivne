@@ -14,7 +14,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.optional-dependencies]
-dev = ["black", "isort", "behave", "pexpect"]
+dev = ["behave"]
 
 [tool.setuptools_scm]
 write_to = "ppp/_version.py"

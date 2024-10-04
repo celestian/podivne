@@ -57,7 +57,7 @@ def behave(session: nox.Session) -> None:
     session.install("virtualenv")
     session.run("virtualenv", os.fsdecode(VENV_DIR), silent=True)
     python = os.fsdecode(VENV_DIR.joinpath("bin/python"))
-    session.run(python, "-m", "pip", "install", ".", external=True)
+    session.run(python, "-m", "pip", "install", "-e", ".[dev]", external=True)
 
     session.install("behave")
 
